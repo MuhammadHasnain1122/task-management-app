@@ -1,0 +1,35 @@
+<div class="pt-5 pl-3">
+	<label>Filter:</label>
+	<select [(ngModel)]="filterType"
+		class="filter">
+		<option value="all">All Tasks</option>
+		<option value="completed">Completed Tasks</option>
+	</select>
+</div>
+
+<div class="card pt-4 pl-5 pr-5 ">
+    <p-table [value]="filteredTasks" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+				<th>Task Name</th>
+                <th>Task Type</th>
+                <th>Assign</th>
+                <th>Date</th>
+				<th>completed</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-task>
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.taskType }}</td>
+				<td>{{ task.assign }}</td>
+				<td>{{ task.date}}</td>
+				<td>{{ task.completed ? 'Yes' : 'No' }}
+					<input [checked]="task.completed"
+			(change)="markCompleted(task)"
+			type="checkbox">
+				</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

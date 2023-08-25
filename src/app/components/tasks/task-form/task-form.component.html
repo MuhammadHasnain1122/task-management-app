@@ -1,0 +1,40 @@
+<div class="card flex justify-content-center gap-2">
+	<p-toast></p-toast>
+	<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+
+	<!-- src/app/task-form/task-form.component.html -->
+	<form [formGroup]="taskForm"
+		(ngSubmit)="confirm1()">
+		<div class="flex flex-col gap-5">
+			<div class="flex-row gap-4">
+				<label for="taskName">Task Name:</label>
+				<input type="text"
+					id="title"
+					formControlName="title" style="border: 1px solid; border-radius: 10px;">
+			</div>
+            <div class="flex-row gap-4">
+				<label for="taskName">Task Type:</label>
+				<input type="text"
+					id="taskType"
+					formControlName="taskType" style="border: 1px solid; border-radius: 10px;">
+			</div>
+			<div class="flex-row gap-4">
+				<label for="assign">Assign:</label>
+				<input type="text"
+					id="assign"
+					formControlName="assign" style="border: 1px solid; border-radius: 10px;">
+			</div>
+			<div class="flex-row gap-4">
+
+				<label for="date">Date:</label>
+				<input type="date"
+					id="date"
+					formControlName="date" style="border: 1px solid;  border-radius: 10px;" >
+			</div>
+
+			<button type="submit" class="submit-button" >Add Task</button>
+
+		</div>
+	</form>
+
+</div>

@@ -1,0 +1,12 @@
+.add-task {
+    padding: 5px;
+    border: 1px solid
+}
+
+.submit-button {
+    border: 1px solid;
+    padding: 2px;
+    width: 99px;
+    border-radius: 30px;
+    background: yellowgreen;
+}
